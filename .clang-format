@@ -1,0 +1,34 @@
+# Стиль проекта: основа Google, отступ 4, строка до 110 символов.
+# Применить ко всем файлам:
+#   clang-format -i include/*.h src/*.cpp tests/*.cpp tests/*.h examples/*.cpp
+BasedOnStyle: Google
+Language: Cpp
+Standard: c++20
+
+IndentWidth: 4
+ContinuationIndentWidth: 4
+AccessModifierOffset: -4
+ColumnLimit: 110
+
+# Короткие конструкции можно писать в одну строку, как в src/
+AllowShortFunctionsOnASingleLine: All
+AllowShortIfStatementsOnASingleLine: WithoutElse
+AllowShortLoopsOnASingleLine: true
+AllowShortLambdasOnASingleLine: All
+AllowShortBlocksOnASingleLine: Empty
+
+BreakBeforeBraces: Attach
+DerivePointerAlignment: false
+PointerAlignment: Left
+SpacesBeforeTrailingComments: 2
+FixNamespaceComments: true
+
+# Пустые строки: не больше одной подряд, без пустых строк в начале блока
+MaxEmptyLinesToKeep: 1
+KeepEmptyLinesAtTheStartOfBlocks: false
+InsertNewlineAtEOF: true
+
+# Группы include не переставляются, сортировка только внутри группы:
+# свой заголовок, затем gtest, затем стандартная библиотека, затем системные.
+IncludeBlocks: Preserve
+SortIncludes: CaseSensitive
